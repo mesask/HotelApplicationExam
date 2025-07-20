@@ -16,6 +16,9 @@
         android:theme="@style/Theme.HotelApplicationExam"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.CategoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.RegisterActivity"
             android:exported="false" />
         <activity

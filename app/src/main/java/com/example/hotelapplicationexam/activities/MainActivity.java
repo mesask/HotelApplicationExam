@@ -15,7 +15,7 @@ import com.example.hotelapplicationexam.data.local.UserLocalData;
 
 public class MainActivity extends AuthenticatorActivity {
 
-    private Button btnLogout;
+    private Button btnLogout, btnOpenListCategory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,5 +42,15 @@ public class MainActivity extends AuthenticatorActivity {
                 finish();
             }
         });
+
+        btnOpenListCategory = findViewById(R.id.btnOpenListCategory);
+        btnOpenListCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

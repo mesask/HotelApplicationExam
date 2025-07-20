@@ -18,7 +18,12 @@ public class UserLocalData {
 
     public static String getAccessToken(Context context){
         SharedPreferences sharedPreferences = context.getSharedPreferences("USER_DATA",MODE_PRIVATE);
-        return sharedPreferences.getString("ACCESS_TOKEN","REFRESH_TOKEN");
+        return sharedPreferences.getString("ACCESS_TOKEN","");
+    }
+
+    public static String getHeaderAccessToken(Context context){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("USER_DATA",MODE_PRIVATE);
+        return "Bearer "+sharedPreferences.getString("ACCESS_TOKEN","");
     }
 
     public static void removeUserData(Context context){
