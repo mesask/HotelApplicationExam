@@ -2,7 +2,6 @@ package com.example.hotelapplicationexam.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,7 +23,7 @@ import com.example.hotelapplicationexam.utils.MessageUtils;
 public class LoginActivity extends AppCompatActivity {
     private EditText etUsername, etPassword;
     private ProgressBar progressBar;
-    private Button btnLogin;
+    private Button btnLogin,btnRegister;
     private AuthRepository authRepository;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +49,22 @@ public class LoginActivity extends AppCompatActivity {
         etUsername = findViewById(R.id.etUsername);
         progressBar = findViewById(R.id.progressBar);
         btnLogin = findViewById(R.id.btnLogin);
+        btnRegister = findViewById(R.id.btnRegister);
         authRepository = new AuthRepository();
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 login();
+            }
+        });
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                register();
+//                Intent intent = new Intent();
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+//                finish();
             }
         });
     }
